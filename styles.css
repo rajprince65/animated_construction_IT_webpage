@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.drone-container {
+    position: relative;
+}
+
+.drone {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-image: url('./smalldrone.png'); /* Add the image URL here */
+    background-size: cover; /* Adjust as needed */
+    /* background-color: #3498db; */
+   
+    top: -90px;
+    left: 40%;
+    transform: translateX(-50%);
+    animation: moveForward 5s linear infinite;
+}
+
+.text-container {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+@keyframes moveForward {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+   
+}

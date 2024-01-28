@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Display</title>
+  <style>
+    /* Add some styling for better visibility */
+    body {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Container to display the text -->
+<div id="displayText"></div>
+
+<script>
+  const originalText = "apple ball";
+  // Function to display text with spaces between each letter
+  function displayTextWithSpaces(text) {
+    let spacedText = text.split('').join(' ');
+    document.getElementById('displayText').innerText = spacedText;
+  }
+ //   displayTextWithSpaces(originalText)
+ 
+  // Initial text
+//   const originalText = "apple ball";
+
+  // Set up the interval to update the display every 20 milliseconds
+//   const intervalId = setInterval(function() {
+//     displayTextWithSpaces(originalText);
+//   }, 2000);
+
+  // Stop the interval after a certain duration (e.g., 2000 milliseconds or 2 seconds)
+//   setTimeout(function() {
+//     clearInterval(intervalId);
+//   }, 2000);
+</script>
+
+</body>
+</html>

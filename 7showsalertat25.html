@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #drone {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            animation: moveLeftToRight 14s linear infinite; /* Adjust the duration as needed */
+        }
+
+        @keyframes moveLeftToRight {
+            0% {
+                left: 0;
+            }
+            25% {
+                left: 25%;
+            }
+            50% {
+                left: 50%;
+            }
+            75% {
+                left: 75%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+    <title>Drone Animation</title>
+</head>
+<body>
+    <img src="smallDrone.png" alt="Drone" id="drone">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const drone = document.getElementById("drone");
+
+            // Function to be called when drone is approximately at 25% to the left
+            function displayText() {
+                alert("Text displayed when drone is approximately at 25% to the left!");
+                // You can replace the alert with your own custom logic
+            }
+
+            drone.addEventListener("animationiteration", function () {
+                const start = performance.now();
+
+                function checkPosition() {
+                    const elapsed = performance.now() - start;
+                    const progress = (elapsed / 4000) * 100; // 4000 is the animation duration in milliseconds
+
+                    if (progress >= 25 && progress <= 26) {
+                        displayText();
+                    } else {
+                        requestAnimationFrame(checkPosition);
+                    }
+                }
+
+                requestAnimationFrame(checkPosition);
+            });
+        });
+    </script>
+</body>
+</html>

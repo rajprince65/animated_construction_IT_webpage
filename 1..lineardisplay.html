@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Text Display</title>
+  <style>
+    #linearText {
+      font-size: 24px;
+      white-space:pre;
+      letter-spacing: 0; /* Set letter-spacing to 0 */
+    }
+  </style>
+</head>
+<body>
+
+<div id="linearText"></div>
+
+<script>
+  let index = 0;
+  const originalText = "Data Collection Using Drone.";
+
+  function showNextCharacter() {
+    if (index < originalText.length) {
+      const linearText = document.getElementById('linearText');
+
+      if (originalText[index] === "") {
+        linearText.innerText += ""; // Add space directly
+      } else {
+        linearText.innerText += originalText[index];
+      }
+
+      setTimeout(() => {
+        index++;
+        showNextCharacter();
+      }, 1000); // 1 second
+    }
+  }
+
+  // Initial trigger
+  showNextCharacter();
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Text Display</title>
+  <style>
+    #linearText {
+      font-size: 24px;
+      white-space: pre;
+      letter-spacing: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="linearText"></div>
+
+<script>
+  let index = 0;
+  const originalText = "Data Collection Using Drone.";
+
+  function showNextCharacter() {
+    if (index < originalText.length) {
+      const linearText = document.getElementById('linearText');
+      linearText.innerText += originalText[index];
+
+      setTimeout(() => {
+        index++;
+        showNextCharacter();
+      }, 1000); // 1 second
+    }
+  }
+
+  // Initial trigger
+  showNextCharacter();
+</script>
+
+</body>
+</html>

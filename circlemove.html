@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #circle {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <div id="circle">A</div>
+</div>
+
+<script>
+  // Function to move the circle and change the text
+  function moveCircle() {
+    const circle = document.getElementById('circle');
+    const container = document.getElementById('container');
+    const maxWidth = container.clientWidth - circle.clientWidth;
+
+    let currentPosition = 0;
+
+    // Move the circle and change text every 16 milliseconds (60 frames per second)
+    const moveInterval = setInterval(() => {
+      currentPosition += 5; // Adjust the speed as needed
+      if (currentPosition > maxWidth) {
+        currentPosition = 0;
+      }
+
+      circle.style.left = currentPosition + 'px';
+      circle.textContent = String.fromCharCode(circle.textContent.charCodeAt(0) + 1);
+    }, 16);
+
+    // Stop the animation after a certain duration (e.g., 5000 milliseconds)
+    setTimeout(() => {
+      clearInterval(moveInterval);
+    }, 5000);
+  }
+
+  // Start the animation when the page loads
+  window.onload = moveCircle;
+</script>
+
+</body>
+</html>

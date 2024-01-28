@@ -1,0 +1,165 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #drone {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0%, -50%);
+      width: 350px; /* Adjust the width of the drone image */
+      height: auto;
+    }
+
+    #text {
+      position: absolute;
+      top: 60%;
+      left: 0;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <img id="drone" src="./smalldrone.png" alt="Drone" onload="startAnimation()">
+  <div id="text"></div>
+</div>
+
+<script>
+  const container = document.getElementById('container');
+  const drone = document.getElementById('drone');
+  const textElement = document.getElementById('text');
+  const maxWidth = container.clientWidth - drone.clientWidth;
+  const text = "this is a drone work";
+  let currentPosition = 0;
+  let textIndex = 0;
+
+  function moveDrone() {
+    currentPosition += 5; // Adjust the speed as needed
+    if (currentPosition > maxWidth) {
+      currentPosition = 0;
+      textIndex = 0;
+    }
+
+    drone.style.left = currentPosition + 'px';
+
+    if (textIndex < text.length) {
+      textElement.textContent += text[textIndex];
+      textIndex++;
+    }
+  }
+
+  // Move the drone and update text every 16 milliseconds (60 frames per second)
+  const animationInterval = setInterval(moveDrone, 160);
+
+  // Stop the animation after a certain duration (e.g., 5000 milliseconds)
+  setTimeout(() => {
+    clearInterval(animationInterval);
+  }, 5000);
+
+  function startAnimation() {
+    // Ensure that the image is fully loaded before starting the animation
+    setInterval(moveDrone, 160);
+  }
+</script>
+
+</body>
+</html> --> 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #drone {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0%, -50%);
+      width: 250px; /* Adjust the width of the drone image */
+      height: auto;
+    }
+
+    #text {
+      position: absolute;
+      top: 60%;
+      left: 0;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <img id="drone" src="./smalldrone.png" alt="Drone" onload="startAnimation()">
+  <div id="text"></div>
+</div>
+
+<script>
+  const container = document.getElementById('container');
+  const drone = document.getElementById('drone');
+  const textElement = document.getElementById('text');
+  const maxWidth = container.clientWidth - drone.clientWidth;
+  const text = "this is a drone work";
+  let currentPosition = 0;
+  let textIndex = 0;
+
+  function moveDrone() {
+    currentPosition += 5; // Adjust the speed as needed
+    if (currentPosition > maxWidth) {
+      currentPosition = 0;
+      textIndex++;
+    }
+
+    drone.style.left = currentPosition + 'px';
+
+    if (textIndex < text.length) {
+      textElement.textContent = text.substring(0, textIndex + 1);
+    }
+  }
+
+  // Move the drone and update text every 16 milliseconds (60 frames per second)
+  const animationInterval = setInterval(moveDrone, 16);
+
+  // Stop the animation after a certain duration (e.g., 5000 milliseconds)
+  setTimeout(() => {
+    clearInterval(animationInterval);
+  }, 5000);
+
+  function startAnimation() {
+    // Ensure that the image is fully loaded before starting the animation
+    setInterval(moveDrone, 16);
+  }
+</script>
+
+</body>
+</html>

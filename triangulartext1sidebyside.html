@@ -1,0 +1,395 @@
+ <!-- 100%;
+    height:700px ;
+    background-color: #c91010;
+
+        
+
+    }
+
+   
+    .continer1{
+       display: flex;
+       /* align-items: center; */
+       width: 100%;
+       height:500px      
+
+    }
+    .continer1 .text5Container{
+        /* flex: 0; */
+
+        position: relative; 
+        width: 30%;
+        height: 400px;
+       
+        top:0;
+        left:0;
+        background-color: #FFFFFF;
+        
+        font-family: sans-serif;
+        font-size: 16px;
+        margin-right:0px;
+        
+
+    }
+
+    .text5Container #a1,
+    .text5Container #a2,
+    .text5Container #a3{
+        position: absolute;
+        animation: flyAnimation 1s ease-out;
+    }
+
+    .text5Container #a1{  
+        top: 25%;
+        left: 48%;
+      
+    }
+    .text5Container #a2{  
+        top: 33%;
+        left: 43%;
+    }
+    .text5Container #a3{  
+        top: 41%;
+        left: 43%;
+    }
+
+    .continer1 .streetNaming{
+        
+        flex: 1;
+        background-color: #ffffff;
+        width: 50%;
+        height:400px;
+         
+    }
+   .continer1 .streetNaming video{
+
+    margin-left: 20px;
+    }
+
+    @keyframes flyAnimation {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.text-fly {
+    animation: flyAnimation 1s ease-out;
+}
+    </style>
+</head>
+<body>
+<div class="continer<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triangular text</title>
+    <style>
+    .continer0{
+    
+    /* align-items: center; */
+    width:0"></div>
+
+ <div class="continer1">
+    <div class="text5Container">
+        <div id="a1" class="text-fly"><h2>LAND</h2></div>
+        <div id="a2" class="text-fly"><h2>SURVEYING</h2></div>
+        <div id="a3" class="text-fly"><h2>MADE EASY</h2></div>
+    </div>
+    <div  class="streetNaming">
+        <video  height="500px"; width=500px; autoplay muted alt>
+          <source src="./streetnNaming.mp4" type="video/mp4">
+        </video>
+    </div>
+ </div>
+
+ <script>
+   function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            const elementsToAnimate = document.querySelectorAll('.text-fly');
+
+            elementsToAnimate.forEach((element) => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('text-fly-visible');
+                }
+            });
+        }
+
+        // Attach scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check in case elements are already in the viewport
+        handleScroll();
+</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triangular text</title>
+    <style>
+        .continer0 {
+            width: 100%;
+            height: 700px;
+            background-color: #c91010;
+        }
+
+        .continer1 {
+            display: flex;
+            width: 100%;
+            height: 500px;
+        }
+
+        .continer1 .text5Container {
+            position: relative;
+            width: 30%;
+            height: 400px;
+            top: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            font-family: sans-serif;
+            font-size: 16px;
+            margin-right: 0px;
+        }
+
+        .text5Container #a1,
+        .text5Container #a2,
+        .text5Container #a3 {
+            position: absolute;
+            opacity: 0; /* Initial opacity set to 0 */
+        }
+
+        .text5Container #a1 { top: 25%; left: 48%; }
+        .text5Container #a2 { top: 33%; left: 43%; }
+        .text5Container #a3 { top: 41%; left: 43%; }
+
+        .continer1 .streetNaming {
+            flex: 1;
+            background-color: #ffffff;
+            width: 50%;
+            height: 400px;
+        }
+
+        .continer1 .streetNaming video {
+            margin-left: 20px;
+        }
+
+        @keyframes flyAnimation {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* .text-fly {
+            opacity: 0;
+            animation: flyAnimation 4s ease-out;
+        } */
+        .text-fly-animate {
+            animation: flyAnimation 4s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="continer0"></div>
+
+    <div class="continer1">
+        <div class="text5Container">
+            <div id="a1" class="text-fly"><h2>LAND</h2></div>
+            <div id="a2" class="text-fly"><h2>SURVEYING</h2></div>
+            <div id="a3" class="text-fly"><h2>MADE EASY</h2></div>
+        </div>
+        <div class="streetNaming">
+            <video height="500px"; width=500px; autoplay muted alt>
+                <source src="./streetnNaming.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!-- <script>
+        //script to fly text having single id
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= window.innerHeight &&
+                rect.right <= window.innerWidth
+            );
+        }
+
+        function handleScroll() {
+            const elementToAnimate = document.getElementById('a1');
+
+            if (elementToAnimate && isElementInViewport(elementToAnimate)) {
+                console.log("inside main if clause");
+                // Add a class to trigger the animation
+                elementToAnimate.classList.add('text-fly-animate');
+                elementToAnimate.style.opacity = 1;
+    
+                // Optionally, you can remove the scroll listener once the animation has been triggered
+                document.removeEventListener('scroll', handleScroll);
+            }
+        }
+
+        // Set initial opacity to 0
+        document.addEventListener('DOMContentLoaded', function () {
+            const elementToAnimate = document.getElementById('a1');
+            if (elementToAnimate) {
+                elementToAnimate.style.opacity = 0;
+            }
+        });
+
+        // Attach scroll event listener to the document
+        document.addEventListener('scroll', handleScroll);
+
+        // Initial check in case the element is already in the viewport
+        handleScroll();
+    </script> -->
+
+    
+    <!-- <script>
+        //this code is working to given animation to flying text for unique id's like a1,a2,a3 having same class
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            console.log('rect.top'+rect.top)
+            console.log('rect.left'+rect.left)
+            console.log('rect.bottom'+rect.bottom)
+            console.log('rect.right'+rect.right)
+            console.log("window innerHeight "+window.innerHeight)
+            console.log("window innerWidth "+window.innerWidth)
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= window.innerHeight &&
+                rect.right <= window.innerWidth
+            );
+        }
+
+        function handleScroll() {
+            const elementsToAnimate = document.querySelectorAll('.text-fly');
+            let allElementsAnimated = true;
+
+            elementsToAnimate.forEach((element) => {
+                if (!element.classList.contains('text-fly-animate') && isElementInViewport(element)) {
+                    console.log("inside main if clause");
+                    // Add a class to trigger the animation
+                    element.classList.add('text-fly-animate');
+                    element.style.opacity = 1;
+
+                    // Mark that not all elements have been animated
+                    //  allElementsAnimated = false;
+                    //  if (allElementsAnimated) {
+                    //      console.log("allelimentanimated "+ allElementsAnimated)
+                    //      document.removeEventListener('scroll', handleScroll);
+                    //     }
+
+                    //Listen for the animation end event
+                    element.addEventListener('animationend', () => {
+                        console.log('Animation has finished');
+                        // Optionally, you can add a callback function here or perform additional actions
+                    });
+                }
+            });
+
+            // If all elements have been animated, remove the scroll listener
+            // if (allElementsAnimated) {
+            //     console.log("allelimentanimated "+ allElementsAnimated)
+            //     document.removeEventListener('scroll', handleScroll);
+            // }
+        }
+
+        // Set initial opacity to 0
+        document.addEventListener('DOMContentLoaded', function () {
+            const elementsToAnimate = document.querySelectorAll('.text-fly');
+            elementsToAnimate.forEach((element) => {
+                element.style.opacity = 0;
+            });
+        });
+
+        // Attach scroll event listener to the document
+        document.addEventListener('scroll', handleScroll);
+
+        // Initial check in case elements are already in the viewport
+        handleScroll();
+    </script> -->
+
+
+    <script>
+        //this code is working to given animation to flying text for unique id's like a1,a2,a3 having same class
+       //nice code for animaion of string
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= window.innerHeight &&
+                rect.right <= window.innerWidth
+            );
+        }
+
+        function handleScroll() {
+            const elementsToAnimate = document.querySelectorAll('.text-fly');
+            let allElementsAnimated = true;
+
+            elementsToAnimate.forEach((element) => {
+                if (!element.classList.contains('text-fly-animate') && isElementInViewport(element)) {
+                    console.log("inside main if clause");
+                    // Add a class to trigger the animation
+                    element.classList.add('text-fly-animate');
+                    element.style.opacity = 1;
+
+                    // Listen for the animation end event
+                    element.addEventListener('animationend', () => {
+                        console.log('Animation has finished');
+                        // Optionally, you can add a callback function here or perform additional actions
+                        
+                        // Check if all elements have been animated
+                        const allElementsAnimated = Array.from(elementsToAnimate).every(el => el.classList.contains('text-fly-animate'));
+                        console.log(" 2345   "+allElementsAnimated)
+                        // If all elements have been animated, remove the scroll listener
+                        if (allElementsAnimated) {
+                            document.removeEventListener('scroll', handleScroll);
+                        }
+                    });
+                }
+            });
+        }
+
+        // Set initial opacity to 0
+        document.addEventListener('DOMContentLoaded', function () {
+            const elementsToAnimate = document.querySelectorAll('.text-fly');
+            elementsToAnimate.forEach((element) => {
+                element.style.opacity = 0;
+            });
+        });
+
+        // Attach scroll event listener to the document
+        document.addEventListener('scroll', handleScroll);
+
+        // Initial check in case elements are already in the viewport
+        handleScroll();
+    </script>
+
+</body>
+</html>
+

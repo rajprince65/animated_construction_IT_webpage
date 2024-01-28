@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex study</title>
+    <style>
+      
+        #container{
+            border: 2px red;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+
+            height: 500px;
+            width: 100%;
+            background-color: aqua;
+            flex-wrap: wrap;
+
+        }
+        #container0{
+          height: 80%; 
+          width: 70%;
+          background-color: rgb(84, 75, 75);
+          margin-right: 2%;
+        }
+        #container0 img{
+            padding-left: 180px;
+            justify-content: end;
+            align-items: center;
+
+        }     
+        #container1{
+          height: 80%; 
+          width: 80px;
+          background-color: brown;
+
+        }
+        #container2{
+            
+            
+          height:80%; 
+          width: 200px;
+          background-color:blueviolet;
+         
+
+
+        }
+        #container1 #I1{
+            margin-bottom: 25px;
+            height: 60px;
+            width: 80px;
+            background-color: chocolate;
+            object-fit: contain;
+            
+        }
+        /* #container1 .tick{
+
+            height: 50%;
+            width: 50%;
+
+        }
+         */
+        #container2 #t1
+        {   
+           
+            height: 50px;
+            width:200px;
+            text-align:center;
+            padding-top: 10px;
+            margin-bottom: 25px; 
+
+            background-color: rgb(68, 17, 151);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight:bold ;
+           
+            
+        }
+        #container2 .st1{
+
+        font-size: 18.8px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+           
+            <div id="container">
+                <div id="container0">
+                    <img style="height:70%;width:70%;" src="./image/clickHereRoad.png" alt="">
+    
+                </div>
+                <div id="container1">
+                    <div id="I1">
+                        <img style="height:100%;width: 100%"  src="./image/streetIcon.png" alt="imgsi">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width:50%;margin-bottom:10px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                    <div class="tick">
+                        <img style="height:50%;width: 50%;margin-bottom:8px;"  src="./image/tick.png" alt="">
+                    </div>
+                </div>
+                <div id= "container2">
+                    <div id="t1">Street Detail</div>
+                    <div class="st1">सडकको नाम र कोड</div>
+                    <div class="st1">सडकको चौडाई</div> 
+                    <div class="st1">सडकको क्षेत्र अधिकार</div>
+                    <div class="st1">ड्रेनेज स्थिति</div>
+                    <div class="st1" >पेभमेन्ट स्थिति</div>
+                    <div class="st1">सडक बत्तिको स्थिति</div>
+                    <div class="st1">पार्किंग सुविधा</div>
+                    <div class="st1"> आपतकालीन यातायात पहुँच</div>
+                </div>
+            </div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Banner</title>
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        /* body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        } */
+
+        #banner {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        #text1 {
+            position: absolute;
+            /* font-size:small; */
+            font-size:x-large;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #text2 {
+            position: absolute;
+            font-size:xx-large;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #text3 {
+            position: absolute;
+            font-size:x-small;
+            top: 60%;
+            left:39.5%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #banin_image1{
+            height: 260px;
+            width: 400px;
+            position :absolute;
+            top: 38%;
+            left: 60%;
+            /* top: 180px;
+            left: 850px; */
+            
+
+        }
+
+        #drone {
+            position: absolute;
+            width:  270px;
+            height: 270px;
+            background-image: url('./smalldrone.png'); /* Add the image URL here */
+            background-size: cover; /* Adjust as needed */
+            animation: moveDrone 9s linear infinite;
+        }
+
+        @keyframes moveDrone {
+            0% {
+                left: 8%;
+                top: -15%;
+            }
+            /* 25% {
+                left: 50%;
+                top: 0;
+            }
+            50% {
+                left: 95%;
+                top: 50%;
+            }
+            75% {
+                left: 50%;
+                top: 50%;
+            } */
+            100% {
+                left: 70%;
+                top: -15%;
+            } 
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div id="banner">
+        <img src="banner.png" alt="Your Image">
+        <div id="text1">
+            <h1></h1>
+        </div>
+        <div id="banin_image1">
+            <img src="tvimagelarge.png" alt="tvimagelarge">
+        </div>
+        <div id="text2">
+            <h1>PALIKA GIS</h1>
+        </div>
+        <div id="text3">
+            <h1>Municapility's own customised GIS</h1>
+        </div>
+        <div id="drone"></div>
+        
+    </div>
+
+    <!-- The rest of your content goes here -->
+    <!-- <script src="script.js"></script> -->
+    <script>
+
+        // const droneTextElement = document.getElementById('droneText');
+             const droneTextElement = document.getElementById('text1');
+             const sentence = "Data Collection Using Drone.";
+ 
+             let index = 0;
+ 
+             function displayText() {
+                 droneTextElement.textContent = sentence.slice(0, index);
+                 index++;
+ 
+                 if (index > sentence.length) {
+                     index = 0;
+                 }
+             }
+ 
+             setInterval(displayText, 290);
+ 
+ 
+ 
+ 
+     </script>
+
+</body>
+</html>

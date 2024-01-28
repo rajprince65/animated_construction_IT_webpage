@@ -1,0 +1,83 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #drone {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 250px;
+            width: 250px;
+            transform: translate(-50%, -50%);
+            transition: left 9s linear ;
+        }
+    </style>
+    <title>Drone Animation</title>
+</head>
+<body>
+    <img src="./smallDrone.png" alt="Drone" id="drone">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const drone = document.getElementById("drone");
+
+            // Function to move drone from left to right
+            function moveDrone() {
+                drone.style.left = "100%";
+                setTimeout(() => {
+                    drone.style.left = "0";
+                    moveDrone();
+                }, 1000); // Adjust the delay as needed
+            }
+
+            // Start the animation
+            moveDrone();
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: blue;
+        }
+
+        #drone {
+            position: absolute;
+            height:400px;
+            width: 400px;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -130%);
+            animation: moveDrone 14s linear infinite; /* Adjust the duration as needed */
+        }
+
+        @keyframes moveDrone {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+    <title>Drone Animation</title>
+</head>
+<body>
+    <img src="smallDrone.png" alt="Drone" id="drone">
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #drone {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            animation: moveLeftToRight 4s linear infinite; /* Adjust the duration as needed */
+        }
+
+        @keyframes moveLeftToRight {
+            0% {
+                left: 0;
+            }
+            25% {
+                left: 25%;
+            }
+            50% {
+                left: 50%;
+            }
+            75% {
+                left: 75%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+    <title>Drone Animation</title>
+</head>
+<body>
+    <img src="smallDrone.png" alt="Drone" id="drone">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const drone = document.getElementById("drone");
+
+            // Function to be called when drone is approximately at 25% to the left
+            function displayText() {
+                alert("Text displayed when drone is approximately at 25% to the left!");
+                // You can replace the alert with your own custom logic
+            }
+
+            // Detect when the drone reaches 25% to the left in each rotation
+            drone.addEventListener("animationiteration", function () {
+                const computedStyle = window.getComputedStyle(drone);
+                console.log("computed style "+computedStyle.getPropertyValue("left"));
+                const leftValue = parseFloat(computedStyle.getPropertyValue("left"));
+                console.log("..  "+leftValue)
+                if (leftValue >= 24.5 && leftValue <= 25.5) {
+                    displayText();
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #drone {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            animation: moveLeftToRight 4s linear infinite; /* Adjust the duration as needed */
+        }
+
+        @keyframes moveLeftToRight {
+            0% {
+                left: 0;
+            }
+            25% {
+                left: 25%;
+            }
+            50% {
+                left: 50%;
+            }
+            75% {
+                left: 75%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+    <title>Drone Animation</title>
+</head>
+<body>
+    <img src="smallDrone.png" alt="Drone" id="drone">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const drone = document.getElementById("drone");
+
+            // Function to be called when drone is approximately at 25% to the left
+            function displayText() {
+                alert("Text displayed when drone is approximately at 25% to the left!");
+                // You can replace the alert with your own custom logic
+                console.log(",,,,,,,,,")
+            }
+
+            // Detect when the drone reaches 25% to the left during each rotation
+            drone.addEventListener("animationiteration", function (event) {
+                if (event.animationName === "moveLeftToRight" && event.elapsedTime >= 1 && event.elapsedTime <= 1.1) {
+                    displayText();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

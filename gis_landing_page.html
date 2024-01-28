@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Banner</title>
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        /* body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        } */
+
+        #banner {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        #text1 {
+            position: absolute;
+            /* font-size:small; */
+            font-size:x-large;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #text2 {
+            position: absolute;
+            font-size:xx-large;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #text3 {
+            position: absolute;
+            font-size:x-small;
+            top: 60%;
+            left:39.5%;
+            transform: translate(-50%, -50%);
+            color: #ffffff; /* Choose your text color */
+            text-align: center;
+        }
+        #banin_image1{
+            height: 260px;
+            width: 400px;
+            position :absolute;
+            top: 38%;
+            left: 60%;
+            /* top: 180px;
+            left: 850px; */
+            
+
+        }
+        
+        .drone-container {
+            position: absolute;
+            top: 50px ;
+            left: 20%;
+        }
+
+        .drone {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-image: url('./smalldrone.png'); /* Add the image URL here */
+            background-size: cover; /* Adjust as needed */
+            /* background-color: #3498db; */
+            /* left: 20%; */
+            top: -162px;
+            /* left: 45%;  */
+            
+            transform: translateX(-50%);
+            animation: moveForward 8500ms linear infinite;
+        }
+
+        .text-container {
+            position:relative;
+            /* top: -120%; */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #ffffff;
+        }
+        .text-container #droneText  {
+            letter-spacing: 20px;
+            font-weight:bold ;
+
+        }
+        
+        
+        @keyframes moveForward {
+            0% {
+                /* transform: translateX(-50%); */
+                transform: translateX(-50%) translateX(-75%);
+            }
+            100% {
+                transform: translateX(390%);
+            }
+        
+        }
+    </style>    
+</head>
+<body>
+
+    <div id="banner">
+        <img src="banner.png" alt="Your Image">
+        <!-- <div id="text1">
+            <h1></h1>
+        </div> -->
+
+        <div id="banin_image1">
+            <img src="tvimagelarge.png" alt="tvimagelarge">
+        </div>
+        <div id="text2">
+            <h1>PALIKA GIS</h1>
+        </div>
+        <div id="text3">
+            <h1>Municapility's own customised GIS</h1>
+        </div>        
+    </div>
+    <div class="drone-container">
+        
+        <div class="text-container">
+            <p id="droneText"></p>
+        </div>
+        <div class="drone"></div>
+        
+        
+    </div>
+    <!-- The rest of your content goes here -->
+    <!-- <script src="script.js"></script> -->
+   <!-- <script>
+
+             const droneTextElement = document.getElementById('droneText');
+            
+             const sentence = "Data Collection Using Drone.";
+ 
+             let index = 0;
+ 
+             function displayText() {
+                 droneTextElement.textContent = sentence.slice(0, index);
+                 index++;
+ 
+                 if (index > sentence.length) {
+                     index = 0;
+
+                 }
+                
+             }
+         
+             setInterval(displayText,290);
+         
+    </script> -->
+
+    
+      <!-- <script>
+        const droneTextElement = document.getElementById('droneText');
+        const sentence = "Data Collection Using Drone.";
+        let index = 0;
+    
+        function displayText() {
+            
+            droneTextElement.textContent = sentence.slice(0, index);
+            index++;
+    
+            if (index > sentence.length) {
+                index = 0;
+                droneTextElement.innerText = "";
+            }
+        }
+        
+        //const initialTextDelay = 5650;
+        const initialTextDelay = 5100;
+     
+    
+        // Adjust the drone animation duration to match the text duration
+        const droneAnimationDuration = 514 * sentence.length; // 200ms per character
+        const droneElement = document.querySelector('.drone');
+        droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+
+    
+
+        setTimeout(function () {
+            setInterval(displayText,290);
+        }, initialTextDelay);
+
+    </script>   -->
+
+
+
+    <!-- <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.getElementById("droneText");
+            const text = "Municipality's own customized GIS";
+            const drone = document.querySelector(".drone");
+
+            let index = 0;
+
+            function revealText() {
+                if (index < text.length) {
+                textElement.innerText = text.substring(0, index + 1);
+                index++;
+                setTimeout(revealText, 200); // Adjust the reveal interval as needed (20ms in this example)
+                }
+            }
+
+            drone.addEventListener("animationiteration", () => {
+                if (index === text.length) {
+                // Reset index and text for the next animation iteration
+                index = 0;
+                textElement.innerText = "";
+                }
+                revealText();
+            });
+            });
+    </script> -->
+
+
+    <!-- <script>
+        const droneTextElement = document.getElementById('droneText');
+        const sentence = "Data Collection Using Drone.";
+        let index = 0;
+        let isRotationComplete = false;
+    
+        function displayText() {
+            if (!isRotationComplete) {
+                droneTextElement.textContent = sentence.slice(0, index);
+                index++;
+    
+                if (index > sentence.length) {
+                    isRotationComplete = true;
+                    index = 0;
+                }
+            } else {
+                // If rotation is complete, do nothing until the next rotation is triggered
+            }
+        }
+    
+        //const initialTextDelay = 5650;
+        const initialTextDelay = 5100;
+    
+        // Adjust the drone animation duration to match the text duration
+        const droneAnimationDuration = 514 * sentence.length; // 200ms per character
+        const droneElement = document.querySelector('.drone');
+        droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+    
+        setTimeout(function () {
+            setInterval(function () {
+                isRotationComplete = false;
+                displayText();
+            }, 290);
+        }, initialTextDelay);
+    </script> -->
+
+    <!-- <script>
+    const droneTextElement = document.getElementById('droneText');
+    const sentence = "Data Collection Using Drone.";
+    let index = 0;
+
+    function displayText() {
+        droneTextElement.textContent = sentence.slice(0, index);
+        index++;
+
+        if (index > sentence.length) {
+            clearInterval(intervalId); // Stop the interval when the text is fully displayed
+            setTimeout(startRotation, 100); // Introduce a delay after each complete rotation
+        }
+    }
+
+    function startRotation() {
+        index = 0;
+        intervalId = setInterval(displayText, 290);
+    }
+
+    // const initialTextDelay = 5650;
+    const initialTextDelay = 5100;
+
+    // Adjust the drone animation duration to match the text duration
+    const droneAnimationDuration = 514 * sentence.length; // 200ms per character
+    const droneElement = document.querySelector('.drone');
+    droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+
+    function startTextRotation() {
+        startRotation();
+        setTimeout(startTextRotation, droneAnimationDuration + 1000); // Introduce a delay after each complete rotation
+    }
+
+    setTimeout(startTextRotation, initialTextDelay);
+</script> -->
+<!-- <script>
+    const droneTextElement = document.getElementById('droneText');
+    const sentence = "Georaphic Data Collection Using Drone.";
+    let index = 0;
+
+    function displayText() {
+        droneTextElement.textContent = sentence.slice(0, index);
+        index++;
+
+        if (index >= sentence.length) {
+            clearInterval(intervalId); // Stop the interval when the text is fully displayed
+        }
+    }
+
+    function startRotation() {
+        index = 0;
+        intervalId = setInterval(displayText, 320);
+    }
+
+    // const initialTextDelay = 5650;
+    const initialTextDelay = 5100;
+    const rotationDelay = 100; // Adjust the delay after each complete rotation (in milliseconds)
+
+    // Adjust the drone animation duration to match the text duration
+    const droneAnimationDuration = 500 * sentence.length; // 200ms per character
+    const droneElement = document.querySelector('.drone');
+    droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+
+    function startTextRotation() {
+        droneTextElement.innerText = ""; // Clear text before each rotation
+        startRotation();
+        setTimeout(startTextRotation, droneAnimationDuration + rotationDelay-1500); // Introduce a delay after each complete rotation
+    }
+
+    setTimeout(startTextRotation, initialTextDelay);
+</script> -->
+
+<!-- <script>
+    const droneTextElement = document.getElementById('droneText');
+    const sentence = "Data Collection Using Drone.";
+    let index = 0;
+
+    function displayText() {
+        droneTextElement.textContent = sentence.slice(0, index);
+        index++;
+
+        if (index > sentence.length) {
+            clearInterval(intervalId); // Stop the interval when the text is fully displayed
+            setTimeout(startRotation, 100); // Introduce a delay after each complete rotation
+        }
+    }
+
+    function startRotation() {
+        index = 0;
+        intervalId = setInterval(displayText, 290);
+    }
+
+    // const initialTextDelay = 5650;
+    const initialTextDelay = 5100;
+    const rotationDelay = 100; // Adjust the delay after each complete rotation (in milliseconds)
+
+    // Adjust the drone animation duration to match the text duration
+    const droneAnimationDuration = 460 * sentence.length; // 200ms per character
+    const droneElement = document.querySelector('.drone');
+    droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+
+    function startTextRotation() {
+        droneTextElement.innerText = ""; // Clear text before each rotation
+        startRotation();
+    }
+
+    setTimeout(startTextRotation, initialTextDelay);
+</script> -->
+<!-- <script>
+    const droneTextElement = document.getElementById('droneText');
+    const sentence = "Data Collection Using Drone.";
+    let index = 0;
+    let delay=100
+
+    function displayText() {
+        droneTextElement.textContent = sentence.slice(0, index);
+        index++;
+
+        if (index > sentence.length) {
+            delay += 300; 
+            clearInterval(intervalId);
+            setTimeout(startRotation,delay);
+     
+            console.log("delay  " +delay)// Introduce a delay after each complete rotation
+        }
+    }
+
+    function startRotation() {
+        index = 0;
+        droneTextElement.innerText = ""; // Clear text before each rotation
+        intervalId = setInterval(displayText, 390);
+    }
+
+    // const initialTextDelay = 5650;
+    const initialTextDelay = 2000;
+
+    // Adjust the drone animation duration to match the text duration
+    const droneAnimationDuration = 514 * sentence.length; // 200ms per character
+    const droneElement = document.querySelector('.drone');
+    droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+
+    setTimeout(startRotation, initialTextDelay);
+</script> -->
+
+
+<script>
+    const droneTextElement = document.getElementById('droneText');
+    const sentence = "Data Collection Using Drone.";
+    let index = 0;
+    let delay=100
+    console.log("...1")
+
+    function displayText() {
+        console.log("...2")
+        droneTextElement.textContent = sentence.slice(0, index);
+        index++;
+
+        if (index > sentence.length) {
+            index=0;
+            // delay += 300; 
+            // clearInterval(intervalId);
+            // setTimeout(startRotation,delay);
+     
+            // console.log("delay  " +delay)// Introduce a delay after each complete rotation
+        }
+    }
+
+    function startRotation() {
+        console.log("...3")
+        index = 0;
+        droneTextElement.innerText = ""; // Clear text before each rotation
+        intervalId = setInterval(displayText, 390);
+    }
+
+    // const initialTextDelay = 5650;
+    const initialTextDelay = 2000;
+
+    // Adjust the drone animation duration to match the text duration
+    const droneAnimationDuration = 514 * sentence.length; // 200ms per character
+    const droneElement = document.querySelector('.drone');
+    droneElement.style.animationDuration = droneAnimationDuration + 'ms';
+    console.log("..4")
+   // setTimeout(startRotation, initialTextDelay);
+   displayText()
+</script>
+
+
+
+
+
+    
+</body>
+</html>

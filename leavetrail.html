@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation with Drone Image</title>
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    #scene {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #drone {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 250px; /* Adjust the width of your drone image */
+      height: 250px; /* Adjust the height of your drone image */
+      transform: translate(-50%, -50%);
+      transition: transform 9s ease-out;
+    }
+
+    #text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 24px; /* Adjust the font size of your text */
+      color: #000; /* Adjust the color of your text */
+      opacity: 0.5; /* Adjust the opacity of the trail text */
+    }
+  </style>
+</head>
+<body>
+
+<div id="scene">
+  <div id="drone"><img src="./smalldrone.png" alt="Drone"></div>
+  <div id="text-container">this is flower</div>
+</div>
+
+<script>
+  const drone = document.getElementById('drone');
+  const textContainer = document.getElementById('text-container');
+  const text = textContainer.innerText.split(' ');
+
+  let index = 0;
+
+  function moveDrone() {
+    const rotation = index * 360; // Each rotation shows all characters
+    drone.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+    textContainer.innerText = text.join(' ');
+    index = (index + 1) % text.length;
+  }
+
+  // Trigger the moveDrone function every 0.5s (adjust as needed)
+  setInterval(moveDrone, 500);
+</script>
+
+</body>
+</html>
